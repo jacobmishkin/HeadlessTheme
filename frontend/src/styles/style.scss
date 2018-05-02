@@ -1,10 +1,15 @@
+@import 'fonts';
 @import 'theme-colors';
-$theme-font: verdana, sans-serif;
-
-body {
-  font: $theme-font;
-  background-color: $themeColor-Light;
-  h1, h2 {
-      color: $themeColor-Dark
-  }
+$theme-font: 'Cervo-Light',
+Serif;
+h1,
+h2,
+.logo_text {
+    font-family: $theme-font;
+    background-color: $themeColor-Light;
+    letter-spacing: -1.4px;
+    word-spacing: 0px;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: $headerColor;
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Link from "next/link";
 import { Config } from "../config.js";
 
+
 const linkStyle = {
     marginRight: 15
 };
@@ -40,12 +41,9 @@ class Menu extends Component {
 
 
     return(
-      <div>
-          <Link href="/">
-              <a style={linkStyle}>Home</a>
-          </Link>
+      <nav>
           {menuItems}
-      </div>
+      </nav>
     )
   }
 
