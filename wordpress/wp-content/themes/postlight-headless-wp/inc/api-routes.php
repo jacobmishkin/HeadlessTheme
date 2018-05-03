@@ -30,6 +30,14 @@ add_action( 'rest_api_init', function () {
 		)
 	) );
 
+	register_rest_route( 'postlight/v1', '/projects', array(
+		'methods'  => 'GET',
+		'callback' => 'rest_get_projects',
+		'args' => array(
+			'slug' => array_merge( $page_slug_arg, array( 'required' => true ) ),
+		)
+	) );
+
 	register_rest_route('postlight/v1', '/post/preview', array(
 		'methods'  => 'GET',
 		'callback' => 'rest_get_post_preview',
@@ -69,6 +77,16 @@ function rest_get_page( WP_REST_Request $request ) {
 }
 
 /**
+ * Respond to a REST API request to get projects data.
+ *
+ * @param WP_REST_Request $request
+ * @return WP_REST_Response
+ */
+function rest_get_projects( WP_REST_Request $request ) {
+	return rest_get_content( $request, 'projects', __FUNCTION__ );
+}
+
+/**
  * Respond to a REST API request to get post or page data.
  * * Handles changed slugs
  * * Doesn't return posts whose status isn't published
@@ -80,7 +98,7 @@ function rest_get_page( WP_REST_Request $request ) {
  * @return WP_REST_Response
  */
 function rest_get_content( WP_REST_Request $request, $type, $function_name ) {
-	if ( ! in_array( $type, array ( 'post', 'page' ) ) ) {
+	if ( ! in_array( $type, array ( 'post', 'page', 'projects' ) ) ) {
 		$type = 'post';
 	}
 	$slug = $request->get_param( 'slug');
@@ -113,7 +131,7 @@ function rest_get_content( WP_REST_Request $request, $type, $function_name ) {
  * @return Post
  */
 function get_content_by_slug( $slug, $type = 'post' ) {
-	if ( ! in_array( $type, array ( 'post', 'page' ) ) ) {
+	if ( ! in_array( $type, array ( 'post', 'page', 'projects' ) ) ) {
 		$type = 'post';
 	}
 	$args = array(
@@ -173,4 +191,5 @@ function rest_get_post_preview(WP_REST_Request $request) {
 	$response = $controller->prepare_response_for_collection( $data );
 	return new WP_REST_Response($response);
 }
+
 

@@ -23,3 +23,6 @@ require_once( 'inc/acf-options.php' );
 
 // Add custom API endpoints
 require_once( 'inc/api-routes.php' );
+
+// Add helper functions to WordPress
+require_once( 'inc/helper.php' );

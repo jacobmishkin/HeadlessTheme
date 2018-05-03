@@ -1,11 +1,10 @@
-import Layout from '../components/Layout.js';
 import React, {Component} from 'react';
 import fetch from 'isomorphic-unfetch';
-import Error from 'next/error';
+import Layout from '../components/Layout.js';
 import PageWrapper from '../components/PageWrapper.js';
 import {Config} from '../config.js';
 
-class Post extends Component {
+class Project extends Component {
   static async getInitialProps(context) {
     const {slug, apiRoute} = context.query;
     const res = await fetch(
@@ -16,19 +15,12 @@ class Post extends Component {
   }
 
   render() {
-    if (!this.props.post.title) return <Error statusCode={404} />;
-
+    const {post} = this.props;
     return (
       <Layout {...this.props}>
-        <h1>{this.props.post.title.rendered}</h1>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: this.props.post.content.rendered,
-          }}
-        />
+        <h3>{post.title.rendered}</h3>
       </Layout>
     );
   }
 }
-
-export default PageWrapper(Post);
+export default PageWrapper(Project);

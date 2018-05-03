@@ -4,7 +4,10 @@ import fetch from 'isomorphic-unfetch';
 import Link from 'next/link';
 import PageWrapper from '../components/PageWrapper.js';
 import {Config} from '../config.js';
-
+import About from '../components/About.js';
+import Contact from '../components/Contact.js';
+import Hero from '../components/Hero.js';
+import Card from '../components/Card.js';
 const headerImageStyle = {
   marginTop: 50,
   marginBottom: 50,
@@ -55,15 +58,7 @@ class Index extends Component {
     return (
       <Layout {...this.props}>
         <h1>{this.props.page.title.rendered}</h1>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: this.props.page.content.rendered,
-          }}
-        />
-        <h2>Posts</h2>
-        {posts}
-        <h2>Pages</h2>
-        {pages}
+        <Card />
       </Layout>
     );
   }
