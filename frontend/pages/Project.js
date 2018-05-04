@@ -7,18 +7,19 @@ import {Config} from '../config.js';
 class Project extends Component {
   static async getInitialProps(context) {
     const {slug, apiRoute} = context.query;
-    const res = await fetch(
+    const projectRes = await fetch(
       `${Config.apiUrl}/wp-json/postlight/v1/${apiRoute}?slug=${slug}`
     );
-    const post = await res.json();
-    return {post};
+    const project = await projectRes.json();
+    return {project};
   }
 
   render() {
-    const {post} = this.props;
+    const {project} = this.props;
     return (
       <Layout {...this.props}>
-        <h3>{post.title.rendered}</h3>
+        <h3>{project.title.rendered}</h3>
+        <p>{project.content.rendered}</p>
       </Layout>
     );
   }
