@@ -2,6 +2,16 @@
 @import 'theme-colors';
 $theme-font: 'Cervo-Light',
 Serif;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 h1,
 h2,
 .logo_text {
@@ -12,4 +22,54 @@ h2,
     font-weight: 100;
     text-transform: uppercase;
     color: $headerColor;
+}
+
+
+/*
+*
+*   HEADER STYLES
+*/
+
+.site_header {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+}
+
+.site_logo,
+.logo {
+    display: inline-block;
+}
+
+
+/*
+*
+*   NAV STYLES
+*/
+
+nav {
+    justify-self: end;
+}
+
+.mobile_menu {
+    display: block;
+}
+
+.desktop_menu {
+    text-align: center;
+    display: flex;
+    @media screen and (min-width: 500px) {
+        display: block;
+    }
+}
+
+.mobile_menu {
+    display: block;
+    text-align: center;
+    @media screen and (min-width: 500px) {
+        display: none;
+    }
+}
+
+.desktop_menu {
+    display: none;
 }

@@ -1,53 +1,60 @@
-import React, { Component } from "react";
-import Link from "next/link";
-import { Config } from "../config.js";
-
+import React, {Component} from 'react';
+import Link from 'next/link';
+import BurgerIcon from './BurgerIcon.js';
+import CloseButton from './CloseButton.js';
+import {Config} from '../config.js';
 
 const linkStyle = {
-    marginRight: 15
+  marginRight: 15,
 };
 
+const MenuIcon = (onClick) => (
+  <div role="button">
+    <BurgerIcon />
+  </div>
+);
+
 class Menu extends Component {
-  constructor() {
-      super();
-  }
 
   getSlug(url) {
-      const parts = url.split("/");
-      return parts.length > 2 ? parts[parts.length - 2] : "";
+    const parts = url.split('/');
+    return parts.length > 2 ? parts[parts.length - 2] : '';
   }
 
   render() {
-      const menuItems = this.props.menu.items.map((item, index) => {
-        if (item.object === "custom") {
-            return (
-                <Link href={item.url} key={item.ID}>
-                    <a style={linkStyle}>{item.title}</a>
-                </Link>
-            );
-        }
-        const slug = this.getSlug(item.url);
-        const actualPage = item.object === "category" ? "category" : "post";
+    const menuItems = this.props.menu.items.map((item, index) => {
+      if (item.object === 'custom') {
         return (
-            <Link
-                as={`/${item.object}/${slug}`}
-                href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
-                key={item.ID}
-            >
-                <a style={linkStyle}>{item.title}</a>
+          <li key={item.ID}>
+            <Link href={item.url}>
+              <a style={linkStyle}>{item.title}</a>
             </Link>
+          </li>
         );
+      }
+      const slug = this.getSlug(item.url);
+      const actualPage = item.object === 'category' ? 'category' : 'post';
+      return (
+        <li key={item.ID}>
+          <Link
+            as={`/${item.object}/${slug}`}
+            href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
+          >
+            <a style={linkStyle}>{item.title}</a>
+          </Link>
+        </li>
+      );
     });
 
-
-    return(
-      <nav>
-          {menuItems}
-      </nav>
-    )
+    return (
+      <div>
+        <button onClick={this.props.toggleButton}></button>
+        <nav>
+          <ul>{menuItems}</ul>
+        </nav>
+      </div>
+    );
   }
-
-
 }
 
 export default Menu;

@@ -20,12 +20,14 @@ class Header extends Component {
           <meta charSet="utf-8" />
           <title>WordPress + React Starter Kit Frontend by Postlight</title>
         </Head>
-        <header>
-          <Link href="/">
-            <a>
-              <Logo />
-            </a>
-          </Link>
+        <header className="site_header">
+          <div className="logo">
+            <Link href="/">
+              <a>
+                <Logo />
+              </a>
+            </Link>
+          </div>
           <Menu menu={this.props.mainNav} />
         </header>
       </div>
