@@ -32,7 +32,7 @@ h2,
 
 .site_header {
     display: grid;
-    grid-template-columns: 1fr max-content;
+    grid-template-columns: 1fr 1fr;
 }
 
 .site_logo,
@@ -46,30 +46,40 @@ h2,
 *   NAV STYLES
 */
 
-nav {
+.nav_container {
     justify-self: end;
 }
 
-.mobile_menu {
-    display: block;
+.menu_icon {
+    width: 2em;
+    cursor: pointer;
 }
 
-.desktop_menu {
-    text-align: center;
+.mobile_menu {
     display: flex;
-    @media screen and (min-width: 500px) {
-        display: block;
-    }
-}
-
-.mobile_menu {
-    display: block;
+    flex-direction: column;
+    align-items: flex-end;
     text-align: center;
+    margin-top: 1em;
+    ul {
+        list-style: none;
+        text-align: left;
+        padding: 0;
+        li {
+            margin-top: 1em;
+        }
+    }
     @media screen and (min-width: 500px) {
         display: none;
     }
 }
 
 .desktop_menu {
+    text-align: center;
     display: none;
+    @media screen and (min-width: 500px) {
+        display: flex;
+        margin-top: 2em;
+        list-style: none;
+    }
 }

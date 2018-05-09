@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Link from 'next/link';
 import BurgerIcon from './BurgerIcon.js';
+import ResponsiveMenu from './ResponsiveMenu.js';
 import CloseButton from './CloseButton.js';
 import {Config} from '../config.js';
 
@@ -8,14 +9,7 @@ const linkStyle = {
   marginRight: 15,
 };
 
-const MenuIcon = (onClick) => (
-  <div role="button">
-    <BurgerIcon />
-  </div>
-);
-
 class Menu extends Component {
-
   getSlug(url) {
     const parts = url.split('/');
     return parts.length > 2 ? parts[parts.length - 2] : '';
@@ -47,12 +41,15 @@ class Menu extends Component {
     });
 
     return (
-      <div>
-        <button onClick={this.props.toggleButton}></button>
-        <nav>
-          <ul>{menuItems}</ul>
-        </nav>
-      </div>
+
+        <ResponsiveMenu
+          menuOpenButton={<BurgerIcon />}
+          menuCloseButton={<CloseButton />}
+          largeMenuClassName="desktop_menu"
+          smallMenuClassName="mobile_menu"
+          menu={menuItems}
+        />
+
     );
   }
 }

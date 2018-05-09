@@ -2,8 +2,10 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 const layoutStyle = {
-    margin: 20,
-    padding: 20
+    padding: 20,
+    maxWidth: 950,
+    marginRight: 'auto',
+    marginLeft: 'auto',
 };
 
 const Layout = props => (
