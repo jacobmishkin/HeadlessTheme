@@ -23,7 +23,11 @@ class Index extends Component {
     const posts = await postsRes.json();
     const pagesRes = await fetch(`${Config.apiUrl}/wp-json/wp/v2/pages?_embed`);
     const pages = await pagesRes.json();
-    return {page, posts, pages};
+    const aboutRes = await fetch(
+      `${Config.apiUrl}/wp-json/postlight/v1/page?slug=about`
+    );
+    const about = await aboutRes.json();
+    return {page, posts, pages, about};
   }
 
   render() {
@@ -57,8 +61,17 @@ class Index extends Component {
     });
     return (
       <Layout {...this.props}>
-        <h1>{this.props.page.title.rendered}</h1>
+        <Hero
+          tagline="Jacob Mishkin"
+          jobTitle="Frontend Developer"
+          location="Basied in Chicago, IL"
+        />
         <Card />
+        <About
+          title={this.props.about.title.rendered}
+          content={this.props.about.content.rendered}
+          image={this.props.about.acf.image}
+        />
       </Layout>
     );
   }

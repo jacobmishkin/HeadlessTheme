@@ -1,0 +1,11 @@
+/*
+*
+*   GRID STYLES
+*
+*/
+
+//header grid
+.site_header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

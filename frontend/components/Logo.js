@@ -5,11 +5,7 @@ const LogoCircleStyle = {
   stroke: '#8E8D8A',
 };
 
-const LogoTextStyle = {
-  fontFamily: 'Cervo-Light',
-  fontSize: '64px',
-  fill: '#8E8D8A',
-};
+
 
 
 
@@ -26,7 +22,7 @@ const Logo = () => (
         r="41"
       />
       <text>
-        <tspan style={LogoTextStyle} className="logo_text" x="17.256" y="63">
+        <tspan className="logo_text" x="17.256" y="63">
           JM
         </tspan>
       </text>
