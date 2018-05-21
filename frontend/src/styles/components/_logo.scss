@@ -1,23 +1,28 @@
+.site_logo,
+.logo {
+    display: inline-block;
+}
+
 .logo_text {
     font-family: 'Cervo';
     font-size: 64px;
-    fill: $color-black;
+    fill: $themeColor-Light;
 }
-
-
-/*
-* Animation
-*/
 
 .circle {
     fill: none;
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    transition: stroke-dashoffset 2s ease-in-out;
+    transition: stroke-dashoffset 1.5s ease;
     transform-origin: 50% 50%;
     transform: rotate(-90deg);
-    stroke: $color-black;
+    stroke: $themeColor-Light;
 }
+
+
+/*
+* Logo Animation
+*/
 
 .logo:hover {
     .circle {

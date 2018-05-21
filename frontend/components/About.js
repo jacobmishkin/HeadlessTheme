@@ -1,21 +1,20 @@
 import React, {Component} from 'react';
 import Layout from './Layout';
+import Image from './Image';
 
 const About = ({title, content, image}) => (
-    <section className="about">
-      <h2>{title}</h2>
-      <div className="content">
-        <div className="bio_image">
-          <img src={image} alt="A Photo of Jacob Mishkin" />
-          <p>{content}</p>
-        </div>
+  <section className="about">
+    <h2>{title}</h2>
+    <div className="content">
+      <Image className="bio_image" image={image} alt="Photo Of Jacob Mishkin" />
+      <p>{content}</p>
+    </div>
+    <div className="tags">
+      <div className="skills">
+        <span className="tag" />
       </div>
-      <div className="tags">
-        <div className="skills">
-          <span className="tag" />
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 );
 
 export default About;

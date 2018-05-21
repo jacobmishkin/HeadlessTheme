@@ -3,9 +3,17 @@ sans-serf;
 h1,
 h2 {
     font-family: $theme-font;
-    letter-spacing: -1.4px;
+    letter-spacing: 1.64px;
     word-spacing: 0px;
     font-weight: 100;
     text-transform: uppercase;
     color: $headerColor;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
 }
