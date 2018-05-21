@@ -21,7 +21,7 @@ class Header extends Component {
           <title>Jacob Mishkin | Portfolio</title>
         </Head>
         <header className="site_header">
-          <div className="logo">
+          <div className="logo_wrapper">
             <Link href="/">
               <a>
                 <Logo />

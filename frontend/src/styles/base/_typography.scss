@@ -1,18 +1,11 @@
-$theme-font: 'Cervo-Light',
+$theme-font: 'Cervo',
 sans-serf;
 h1,
-h2,
-.logo_text {
-    font-family: 'Cervo';
-    background-color: $themeColor-Light;
+h2 {
+    font-family: $theme-font;
     letter-spacing: -1.4px;
     word-spacing: 0px;
     font-weight: 100;
     text-transform: uppercase;
     color: $headerColor;
-}
-
-.logo_text {
-    font-size: 64px;
-    fill: #8E8D8A;
 }

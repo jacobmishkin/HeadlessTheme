@@ -1,0 +1,26 @@
+.logo_text {
+    font-family: 'Cervo';
+    font-size: 64px;
+    fill: $color-black;
+}
+
+
+/*
+* Animation
+*/
+
+.circle {
+    fill: none;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    transition: stroke-dashoffset 2s ease-in-out;
+    transform-origin: 50% 50%;
+    transform: rotate(-90deg);
+    stroke: $color-black;
+}
+
+.logo:hover {
+    .circle {
+        stroke-dashoffset: 0;
+    }
+}
