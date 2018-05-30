@@ -5,7 +5,12 @@
 */
 
 //header grid
-.site_header {
+.header_wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    max-width: 1250px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+//project grid

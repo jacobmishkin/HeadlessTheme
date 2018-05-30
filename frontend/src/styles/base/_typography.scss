@@ -1,5 +1,5 @@
 $theme-font: 'Cervo',
-sans-serf;
+serf;
 h1,
 h2 {
     font-family: $theme-font;
@@ -16,4 +16,8 @@ h1 {
 
 h2 {
     font-size: 2rem;
+}
+
+p {
+    font-family: 'Open Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

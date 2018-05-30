@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout.js';
+import Image from '../components/Image.js';
 import PageWrapper from '../components/PageWrapper.js';
 import {Config} from '../config.js';
 
@@ -18,7 +19,8 @@ class Project extends Component {
     const {project} = this.props;
     return (
       <Layout {...this.props}>
-        <h3>{project.title.rendered}</h3>
+        <h2>{project.title.rendered}</h2>
+        <Image image={project.acf.image} className="project_image" />
         <p>{project.content.rendered}</p>
       </Layout>
     );

@@ -64,7 +64,7 @@ class Index extends Component {
         <Hero
           tagline="Jacob Mishkin"
           jobTitle="Frontend Developer"
-          location="Basied in Chicago, IL"
+          location="Based in Chicago"
         />
         <Card />
         <About

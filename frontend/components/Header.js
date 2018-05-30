@@ -13,7 +13,7 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Head>
           <style dangerouslySetInnerHTML={{__html: stylesheet}} />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,16 +21,18 @@ class Header extends Component {
           <title>Jacob Mishkin | Portfolio</title>
         </Head>
         <header className="site_header">
-          <div className="logo_wrapper">
-            <Link href="/">
-              <a>
-                <Logo />
-              </a>
-            </Link>
+          <div className="header_wrapper">
+            <div className="logo_wrapper">
+              <Link href="/">
+                <a>
+                  <Logo />
+                </a>
+              </Link>
+            </div>
+            <Menu menu={this.props.mainNav} />
           </div>
-          <Menu menu={this.props.mainNav} />
         </header>
-      </div>
+      </React.Fragment>
     );
   }
 }

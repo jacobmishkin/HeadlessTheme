@@ -5,7 +5,7 @@ const hrStyle = {
 };
 
 const Footer = () => (
-    <div>
+    <footer>
         <hr style={hrStyle} />
         <p>
             ❤️{" "}
@@ -17,12 +17,11 @@ const Footer = () => (
             </Link>.
         </p>
         <p>
-            👋 Need help with your publishing platform?{" "}
             <Link href="mailto:hello@postlight.com?subject=Partner+with+Postlight+on+a+headless+CMS+project">
                 <a>Say hi.</a>
             </Link>
         </p>
-    </div>
+    </footer>
 );
 
 export default Footer;

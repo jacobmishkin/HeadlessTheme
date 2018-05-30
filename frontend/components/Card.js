@@ -6,10 +6,6 @@ import fetch from 'isomorphic-unfetch';
 import {Config} from '../config';
 
 export default class Projects extends Component {
-  static defaultProps = {
-    limit: 1,
-  };
-
   state = {
     project: [],
   };
@@ -28,19 +24,21 @@ export default class Projects extends Component {
     return (
       <section className="projects">
         <h2>Projects</h2>
-        {project.map(post => (
-          <div className="project" key={post.id}>
-            <Link
-              href={`/Project?slug=${post.slug}&apiRoute=projects`}
-              as={`/Project/${post.slug}`}
-            >
-              <a>
-                {post.title.rendered}
-                <Image image={post.acf.image} />
-              </a>
-            </Link>
-          </div>
-        ))}
+        <div className="container">
+          {project.map(post => (
+            <div className="project" key={post.id}>
+              <Link
+                href={`/Project?slug=${post.slug}&apiRoute=projects`}
+                as={`/Project/${post.slug}`}
+              >
+                <a className="project_link">
+                  <h3>{post.title.rendered}</h3>
+                  <Image image={post.acf.image} className="project_image" />
+                </a>
+              </Link>
+            </div>
+          ))}
+        </div>
       </section>
     );
   }
