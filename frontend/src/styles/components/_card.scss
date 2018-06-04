@@ -1,10 +1,6 @@
 .projects {
     text-align: center;
     background-color: $themeColor-Light;
-    h2 {
-        font-size: 3.5rem;
-        margin: 1em 0;
-    }
 }
 
 .project {
@@ -13,6 +9,7 @@
     background-repeat: no-repeat;
     background-position: top left;
     overflow: hidden;
+    border: 1px solid $themeColor-Light;
     &:before,
     &:after {
         content: '';
@@ -23,7 +20,7 @@
     }
     &:before {
         left: 0;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(1, 4, 0, .6);
     }
     &:after {
         right: 100%;
@@ -46,7 +43,7 @@
     padding: 1.5rem;
     overflow: hidden;
     h3 {
-        color: yellow;
+        color: $themeColor-Light;
         font-size: 2.5rem;
     }
 }

@@ -16,7 +16,6 @@
 //project grid
 .project__grid {
     display: grid;
-    grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     @media screen and (min-width: 850px) {
         .omar-samad {
