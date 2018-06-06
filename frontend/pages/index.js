@@ -8,10 +8,7 @@ import About from '../components/About.js';
 import Contact from '../components/Contact.js';
 import Hero from '../components/Hero.js';
 import Card from '../components/Card.js';
-const headerImageStyle = {
-  marginTop: 50,
-  marginBottom: 50,
-};
+
 
 class Index extends Component {
   static async getInitialProps(context) {
@@ -24,7 +21,7 @@ class Index extends Component {
     const pagesRes = await fetch(`${Config.apiUrl}/wp-json/wp/v2/pages?_embed`);
     const pages = await pagesRes.json();
     const aboutRes = await fetch(
-      `${Config.apiUrl}/wp-json/postlight/v1/page?slug=about`
+      `${Config.apiUrl}/wp-json/postlight/v1/page?slug=about-me`
     );
     const about = await aboutRes.json();
     return {page, posts, pages, about};

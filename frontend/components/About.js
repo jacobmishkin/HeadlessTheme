@@ -5,15 +5,15 @@ import Image from './Image';
 const About = ({title, content, image}) => (
   <section className="about">
     <h2>{title}</h2>
-    <div className="content">
+    <div className="about_container">
       <Image className="bio_image" image={image} alt="Photo Of Jacob Mishkin" />
-      <p>{content}</p>
-    </div>
-    <div className="tags">
-      <div className="skills">
-        <span className="tag" />
+      <div className="about_content">
+        <p>{content}</p>
       </div>
     </div>
+    <div className="tags">
+        <span className="tag" />
+      </div>
   </section>
 );
 
