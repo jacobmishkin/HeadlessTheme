@@ -8,6 +8,9 @@
 .bio_image {
     margin-bottom: 1em;
     flex: 1;
+    img {
+        border-radius: 5px;
+    }
 }
 
 .about_content {
@@ -23,7 +26,6 @@
 @media screen and (min-width: 768px) {
     .about_container {
         flex-direction: row;
-        justify-content: space-between;
     }
     .about_content {
         padding-left: 1em;
