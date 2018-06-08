@@ -33,6 +33,7 @@ class Index extends Component {
           content={about.content.rendered}
           image={about.acf.image}
         />
+        <Contact />
       </Layout>
     );
   }
