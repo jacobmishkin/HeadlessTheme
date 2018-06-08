@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Layout from './Layout';
 import Image from './Image';
+import Skills from './Skills.js';
 
 const About = ({title, content, image}) => (
   <section className="about">
@@ -9,11 +10,9 @@ const About = ({title, content, image}) => (
       <Image className="bio_image" image={image} alt="Photo Of Jacob Mishkin" />
       <div className="about_content">
         <p>{content}</p>
+        <Skills />
       </div>
     </div>
-    <div className="tags">
-        <span className="tag" />
-      </div>
   </section>
 );
 

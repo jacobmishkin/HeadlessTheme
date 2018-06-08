@@ -10,7 +10,6 @@ export default class Projects extends Component {
   };
 
   async componentWillMount() {
-    const {limit} = this.props;
     const projectRes = await fetch(`${Config.apiUrl}/wp-json/wp/v2/projects`);
     const project = await projectRes.json();
     this.setState({

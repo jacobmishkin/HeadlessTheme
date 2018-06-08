@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 
-
-//background animation
-
 const Hero = ({tagline, jobTitle, location}) => (
   <section className="hero full">
     <div className="hero_container">

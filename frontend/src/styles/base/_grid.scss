@@ -37,3 +37,13 @@
         }
     }
 }
+
+//Skills Grid
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+    grid-gap: 15px;
+    .skill {
+        justify-self: start;
+    }
+}
