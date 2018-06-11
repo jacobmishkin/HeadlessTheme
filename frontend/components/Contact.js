@@ -10,6 +10,10 @@ const Contact = ({image, tagline, jobTitle}) => (
       <h4>{jobTitle}</h4>
       <a className="contact_btn" href="mailto:jacob@jacobmishkin.com">
         contact me
+        <span className="top border" />
+        <span className="right border" />
+        <span className="bottom border" />
+        <span className="left border" />
       </a>
       <div className="social_icons">
         <a href="#codepen">
