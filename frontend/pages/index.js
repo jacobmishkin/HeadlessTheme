@@ -15,11 +15,15 @@ class Index extends Component {
       `${Config.apiUrl}/wp-json/postlight/v1/page?slug=about-me`
     );
     const about = await aboutRes.json();
-    return {about};
+    const contactRes = await fetch(
+      `${Config.apiUrl}/wp-json/postlight/v1/page?slug=connect`
+    );
+    const contact = await contactRes.json();
+    return {about, contact};
   }
 
   render() {
-    const {about} = this.props;
+    const {about, contact} = this.props;
     return (
       <Layout {...this.props}>
         <Hero
@@ -33,7 +37,11 @@ class Index extends Component {
           content={about.content.rendered}
           image={about.acf.image}
         />
-        <Contact />
+        <Contact
+          image={contact.acf.image}
+          tagline="Jacob Mishkin"
+          jobTitle="Frontend Developer"
+        />
       </Layout>
     );
   }
