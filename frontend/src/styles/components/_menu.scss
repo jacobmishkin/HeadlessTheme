@@ -16,20 +16,24 @@ nav a {
     color: $themeColor-Light;
 }
 
-.mobile_menu {
+.mobile_navigation {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     text-align: center;
     margin-top: 1em;
     ul {
-        text-align: left;
+        text-align: center;
         padding: 0;
         li {
             margin-top: 1em;
+            padding: .5em;
         }
     }
     @media screen and (min-width: 500px) {
+        display: none;
+    } //Removing border styles on Mobile
+    .border {
         display: none;
     }
 }
@@ -41,7 +45,12 @@ nav a {
         display: flex;
         margin-top: 2em;
     }
-    li a {
-        font-size: 1.3em;
+    li {
+        margin-right: 1em;
+        a {
+            font-size: 1.3em;
+            position: relative;
+            padding: .5em;
+        }
     }
 }

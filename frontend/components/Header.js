@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import Menu from './Menu.js';
-import Logo from './Logo.js';
+import {Logo} from '../utilities';
 import {Config} from '../config.js';
 import stylesheet from '../src/styles/style.scss';
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Layout from './Layout';
-import Image from './Image';
+import {Image} from '../utilities';
 import Skills from './Skills.js';
 
 const About = ({title, content, image}) => (

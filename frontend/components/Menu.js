@@ -1,13 +1,8 @@
 import React, {Component} from 'react';
 import Link from 'next/link';
-import BurgerIcon from './BurgerIcon.js';
 import ResponsiveMenu from './ResponsiveMenu.js';
-import CloseButton from './CloseButton.js';
+import {BurgerIcon, CloseButton, LinkBorder} from '../utilities';
 import {Config} from '../config.js';
-
-const linkStyle = {
-  marginRight: 15,
-};
 
 class Menu extends Component {
   getSlug(url) {
@@ -21,7 +16,10 @@ class Menu extends Component {
         return (
           <li key={item.ID}>
             <Link href={item.url}>
-              <a style={linkStyle}>{item.title}</a>
+              <a>
+                {item.title}
+                <LinkBorder />
+              </a>
             </Link>
           </li>
         );
@@ -34,22 +32,25 @@ class Menu extends Component {
             as={`/${item.object}/${slug}`}
             href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
           >
-            <a style={linkStyle}>{item.title}</a>
+            <a>
+              {item.title}
+              <LinkBorder />
+            </a>
           </Link>
         </li>
       );
     });
 
     return (
-
-        <ResponsiveMenu
-          menuOpenButton={<BurgerIcon />}
-          menuCloseButton={<CloseButton />}
-          largeMenuClassName="desktop_menu"
-          smallMenuClassName="mobile_menu"
-          menu={menuItems}
-        />
-
+      <ResponsiveMenu
+        menuOpenButton={<BurgerIcon />}
+        menuCloseButton={<CloseButton />}
+        primaryNavigationClassName="primary_navigation"
+        mobileNavigationClassName="mobile_navigation"
+        primary_menuClassName="desktop_menu"
+        mobile_menuClassName="mobile_menu"
+        menu={menuItems}
+      />
     );
   }
 }

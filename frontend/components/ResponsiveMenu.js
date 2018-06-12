@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import BurgerIcon from './BurgerIcon.js';
-import CloseButton from './CloseButton.js';
 
 const MenuIcon = ({onClick, icon}) => (
   <div role="button" className="menu_icon" onClick={onClick}>
@@ -23,22 +21,28 @@ class ResponsiveMenu extends Component {
   render() {
     const {
       menu,
-      largeMenuClassName,
-      smallMenuClassName,
+      primaryNavigationClassName,
+      mobileNavigationClassName,
+      primary_menuClassName,
+      mobile_menuClassName,
       changeMenuOn,
       menuOpenButton,
       menuCloseButton,
     } = this.props;
     return (
       <div className="nav_container">
-        <nav className={largeMenuClassName}>{menu}</nav>
-        <nav className={smallMenuClassName}>
+        <nav className={primaryNavigationClassName}>
+          <ul className={primary_menuClassName}>{menu}</ul>
+        </nav>
+        <nav className={mobileNavigationClassName}>
           {!this.state.showMenu ? (
             <MenuIcon onClick={this.handleClick} icon={menuOpenButton} />
           ) : (
             <MenuIcon onClick={this.handleClick} icon={menuCloseButton} />
           )}
-          {this.state.showMenu ? <ul>{menu}</ul> : null}
+          {this.state.showMenu ? (
+            <ul className={mobile_menuClassName}>{menu}</ul>
+          ) : null}
         </nav>
       </div>
     );
@@ -46,7 +50,9 @@ class ResponsiveMenu extends Component {
 }
 
 ResponsiveMenu.defaultProps = {
-  largeMenuClassName: '',
-  smallMenuClassName: '',
+  primaryNavigationClassName: '',
+  mobileNavigationClassName: '',
+  primary_menuClassName: '',
+  mobile_menuClassName: '',
 };
 export default ResponsiveMenu;
