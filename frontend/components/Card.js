@@ -20,7 +20,7 @@ export default class Projects extends Component {
   render() {
     const {project} = this.state;
     return (
-      <section className="projects">
+      <section id="project" className="projects">
         <h2>Projects</h2>
         <div className="container project__grid">
           {project.map(post => (

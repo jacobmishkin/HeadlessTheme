@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Image, SocialIcons, LinkBorder} from '../utilities';
 
 const Contact = ({image, tagline, jobTitle}) => (
-  <section className="contact">
+  <section id="connect" className="contact">
     <h2>Let's Connect</h2>
     <div className="contact_wrapper">
       <Image className="contact_image" image={image} alt="Chicago" />
