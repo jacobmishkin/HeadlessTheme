@@ -1,11 +1,11 @@
 import React, {Component, Fragment} from 'react';
 
-const LinkBorder = () => (
+const LinkBorder = ({btnType}) => (
   <Fragment>
-    <span className="top border" />
-    <span className="right border" />
-    <span className="bottom border" />
-    <span className="left border" />
+    <span className={`top ${btnType}`} />
+    <span className={`right ${btnType}`} />
+    <span className={`bottom ${btnType}`} />
+    <span className={`left ${btnType}`} />
   </Fragment>
 );
 

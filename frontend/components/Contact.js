@@ -10,10 +10,13 @@ const Contact = ({image, tagline, jobTitle}) => (
       <h4>{jobTitle}</h4>
       <a className="contact_btn" href="mailto:jacob@jacobmishkin.com">
         contact me
-        <LinkBorder />
+        <LinkBorder btnType={'contact_border'} />
       </a>
       <SocialIcons />
     </div>
   </section>
 );
+Contact.defaultProps = {
+  btnType: '',
+};
 export default Contact;

@@ -7,16 +7,13 @@
     font-family: 'Cervo';
     font-size: 64px;
     fill: $themeColor-Light;
+    transition: fill .5s;
 }
 
 .circle {
     fill: none;
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    transition: stroke-dashoffset 1.5s ease;
-    transform-origin: 50% 50%;
-    transform: rotate(-90deg);
-    stroke: $themeColor-Light;
+    stroke: $headerColor;
+    transition: stroke .5s;
 }
 
 
@@ -25,7 +22,10 @@
 */
 
 .logo:hover {
+    .logo_text {
+        fill: $headerColor;
+    }
     .circle {
-        stroke-dashoffset: 0;
+        stroke: $themeColor-Light;
     }
 }

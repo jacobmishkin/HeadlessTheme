@@ -18,7 +18,7 @@ class Menu extends Component {
             <Link href={item.url}>
               <a>
                 {item.title}
-                <LinkBorder />
+                <LinkBorder btnType="navBtn" />
               </a>
             </Link>
           </li>
@@ -34,7 +34,7 @@ class Menu extends Component {
           >
             <a>
               {item.title}
-              <LinkBorder />
+              <LinkBorder btnType="navBtn" />
             </a>
           </Link>
         </li>

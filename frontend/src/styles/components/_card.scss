@@ -24,12 +24,17 @@
     }
     &:after {
         right: 100%;
-        background-color: #002a32;
+        background-color: $color-black;
         transition: .2s;
         z-index: 6;
     }
     &:hover::after {
         right: 0;
+    }
+    &:hover {
+        h3 {
+            color: $headerColor;
+        }
     }
 }
 
