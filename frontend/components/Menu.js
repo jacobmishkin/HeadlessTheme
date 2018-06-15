@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
+
 import Link from 'next/link';
 import ResponsiveMenu from './ResponsiveMenu.js';
 import {BurgerIcon, CloseButton, LinkBorder} from '../utilities';
 import {Config} from '../config.js';
-
+import { SpringAnimation } from 'react-spring/dist/universal'
 class Menu extends Component {
   getSlug(url) {
     const parts = url.split('/');
