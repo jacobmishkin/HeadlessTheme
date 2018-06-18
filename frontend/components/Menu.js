@@ -17,7 +17,7 @@ class Menu extends Component {
         return (
           <li key={item.ID}>
             <LinkSmoothScroll href={item.url}>
-              <a href={item.url}>
+              <a>
                 {item.title}
                 <LinkBorder btnType="navBtn" />
               </a>

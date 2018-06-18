@@ -80,6 +80,5 @@ export default url => {
         return;
       }
     }
-    reject(new Error('Error: hash in URL is invalid or element not found!'));
   });
 };
