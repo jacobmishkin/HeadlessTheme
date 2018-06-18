@@ -4,7 +4,7 @@ import Link from 'next/link';
 import ResponsiveMenu from './ResponsiveMenu.js';
 import {BurgerIcon, CloseButton, LinkBorder} from '../utilities';
 import {Config} from '../config.js';
-import { SpringAnimation } from 'react-spring/dist/universal'
+import LinkSmoothScroll from './LinkSmoothScroll.js';
 class Menu extends Component {
   getSlug(url) {
     const parts = url.split('/');
@@ -16,12 +16,12 @@ class Menu extends Component {
       if (item.object === 'custom') {
         return (
           <li key={item.ID}>
-            <Link href={item.url}>
-              <a>
+            <LinkSmoothScroll href={item.url}>
+              <a href={item.url}>
                 {item.title}
                 <LinkBorder btnType="navBtn" />
               </a>
-            </Link>
+            </LinkSmoothScroll>
           </li>
         );
       }

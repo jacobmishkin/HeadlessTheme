@@ -31,7 +31,7 @@ export default class Projects extends Component {
             >
               <Link
                 href={`/Project?slug=${post.slug}&apiRoute=projects`}
-                as={`/Project/${post.slug}`}
+                as={`/project/${post.slug}`}
               >
                 <a className="project_link">
                   <h3>{post.title.rendered}</h3>
