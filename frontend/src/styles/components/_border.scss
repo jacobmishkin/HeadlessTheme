@@ -1,4 +1,4 @@
-.contact_border,
+.btn_border,
 .navBtn {
     content: '';
     position: absolute;
@@ -8,7 +8,7 @@
     transition: all 0.3s ease-in-out;
 }
 
-.contact_border {
+.btn_border {
     background-color: $headerColor;
 }
 
@@ -18,7 +18,8 @@
     }
 }
 
-.contact_wrapper {
+.contact_wrapper,
+.content_wrapper {
     .top {
         top: 0;
         right: 0;
@@ -50,7 +51,8 @@
  *
  */
 
-.contact_btn {
+.btn,
+.project_link {
     &:hover,
     &:focus {
         .top {

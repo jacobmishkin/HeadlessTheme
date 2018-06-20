@@ -8,9 +8,9 @@ const Contact = ({image, tagline, jobTitle}) => (
       <Image className="contact_image" image={image} alt="Chicago" />
       <h3>{tagline}</h3>
       <h4>{jobTitle}</h4>
-      <a className="contact_btn" href="mailto:jacob@jacobmishkin.com">
+      <a className="btn" href="mailto:jacob@jacobmishkin.com">
         contact me
-        <LinkBorder btnType={'contact_border'} />
+        <LinkBorder btnType={'btn_border'} />
       </a>
       <SocialIcons />
     </div>

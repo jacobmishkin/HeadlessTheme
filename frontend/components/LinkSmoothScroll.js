@@ -10,6 +10,7 @@ export default class LinkSmoothScroll extends React.Component {
   }
 
   linkClicked(e) {
+
     e.preventDefault();
     smoothScroll(this.props.href);
     Router.push(this.props.href);

@@ -33,7 +33,7 @@ export default class Projects extends Component {
                 href={`/Project?slug=${post.slug}&apiRoute=projects`}
                 as={`/project/${post.slug}`}
               >
-                <a className="project_link">
+                <a className="card_link">
                   <h3>{post.title.rendered}</h3>
                   {/* <img src={post.acf.image} className="project_image" /> */}
                 </a>

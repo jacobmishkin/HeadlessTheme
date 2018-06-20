@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import fetch from 'isomorphic-unfetch';
 import Layout from '../components/Layout.js';
-import {Image} from '../utilities';
+import {Image, LinkBorder} from '../utilities';
 import PageWrapper from '../components/PageWrapper.js';
 import {Config} from '../config.js';
 
@@ -19,11 +19,20 @@ class Project extends Component {
     const {project} = this.props;
     return (
       <Layout {...this.props}>
-          <h2>{project.title.rendered}</h2>
+        <section className="page_container">
+          <div className="content_wrapper">
+            <h2>{project.title.rendered}</h2>
+            <div className="content">
+              <p>{project.content.rendered}</p>
+              <a className="btn" href="mailto:jacob@jacobmishkin.com">
+                Visit Site
+                <LinkBorder btnType={'btn_border'} />
+              </a>
+            </div>
+          </div>
           <Image image={project.acf.image} className="project_image" />
-          <p>{project.content.rendered}</p>
+        </section>
       </Layout>
-
     );
   }
 }
