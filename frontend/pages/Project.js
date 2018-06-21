@@ -17,6 +17,7 @@ class Project extends Component {
 
   render() {
     const {project} = this.props;
+
     return (
       <Layout {...this.props}>
         <section className="page_container">
@@ -30,7 +31,10 @@ class Project extends Component {
               </a>
             </div>
           </div>
-          <Image image={project.acf.image} className="project_image" />
+
+          {project.acf.project_images.map(image => (
+            <Image key={image.id} image={image.url} className="project_image" />
+          ))}
         </section>
       </Layout>
     );
