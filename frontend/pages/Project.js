@@ -31,9 +31,8 @@ class Project extends Component {
               </a>
             </div>
           </div>
-
           {project.acf.project_images.map(image => (
-            <Image key={image.id} image={image.url} className="project_image" />
+            <Image key={image.id} image={image.url} alt={image.alt} className="project_image" />
           ))}
         </section>
       </Layout>
