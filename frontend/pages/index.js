@@ -8,6 +8,7 @@ import About from '../components/About.js';
 import Contact from '../components/Contact.js';
 import Hero from '../components/Hero.js';
 import Card from '../components/Card.js';
+import Blog from '../components/Blog.js';
 
 class Index extends Component {
   static async getInitialProps(context) {
@@ -37,6 +38,8 @@ class Index extends Component {
           content={about.content.rendered}
           image={about.acf.image}
         />
+        <Blog />
+
         <Contact
           image={contact.acf.image}
           tagline="Jacob Mishkin"

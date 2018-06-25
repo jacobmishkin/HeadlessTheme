@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Link from 'next/link';
-import Layout from './Layout.js';
 import fetch from 'isomorphic-unfetch';
 import {Config} from '../config';
 
@@ -35,7 +34,6 @@ export default class Projects extends Component {
               >
                 <a className="card_link">
                   <h3>{post.title.rendered}</h3>
-                  {/* <img src={post.acf.image} className="project_image" /> */}
                 </a>
               </Link>
             </div>

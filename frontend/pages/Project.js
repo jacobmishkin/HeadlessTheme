@@ -25,7 +25,7 @@ class Project extends Component {
             <h2>{project.title.rendered}</h2>
             <div className="content">
               <p>{project.content.rendered}</p>
-              <a className="btn" href="mailto:jacob@jacobmishkin.com">
+              <a className="btn" href="#">
                 Visit Site
                 <LinkBorder btnType={'btn_border'} />
               </a>
