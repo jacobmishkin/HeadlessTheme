@@ -20,11 +20,16 @@ class Index extends Component {
       `${Config.apiUrl}/wp-json/postlight/v1/page?slug=connect`
     );
     const contact = await contactRes.json();
-    return {about, contact};
+    const blogRes = await fetch(
+      `${Config.apiUrl}/wp-json/wp/v2/posts?per_page=1`
+    );
+    const blog = await blogRes.json();
+    return {about, contact, blog};
   }
 
   render() {
-    const {about, contact} = this.props;
+    const {about, contact, blog} = this.props;
+
     return (
       <Layout {...this.props}>
         <Hero
@@ -38,7 +43,14 @@ class Index extends Component {
           content={about.content.rendered}
           image={about.acf.image}
         />
-        <Blog />
+        {blog.map(items => (
+          <Blog
+            key={items.id}
+            title={items.title.rendered}
+            content={items.excerpt.rendered}
+            link={items.slug}
+          />
+        ))}
 
         <Contact
           image={contact.acf.image}
