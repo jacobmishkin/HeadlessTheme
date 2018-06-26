@@ -9,7 +9,7 @@ export default class Blog extends Component {
   };
 
   async componentWillMount() {
-    const blogRes = await fetch(`${Config.apiUrl}/wp-json/wp/v2/posts`);
+    const blogRes = await fetch(`${Config.apiUrl}/wp-json/wp/v2/posts?per_page=1`);
     const blog = await blogRes.json();
     this.setState({
       blog,
@@ -18,13 +18,10 @@ export default class Blog extends Component {
 
   render() {
     const {blog} = this.state;
-    const post = blog.slice(0, 1);
-    console.log(post);
-    console.log(blog);
     return (
       <section className="blog">
         <h2>blog</h2>
-        {post.map(item => (
+        {blog.map(item => (
           <Fragment>
             <div className="blog_title">
               <Link
