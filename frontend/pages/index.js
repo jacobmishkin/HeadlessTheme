@@ -48,7 +48,10 @@ class Index extends Component {
             key={items.id}
             title={items.title.rendered}
             content={items.excerpt.rendered}
+            image={items.acf.image}
             link={items.slug}
+            date={items.date}
+
           />
         ))}
 
