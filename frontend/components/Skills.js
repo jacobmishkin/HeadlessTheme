@@ -18,6 +18,7 @@ export default class Skills extends Component {
   }
   render() {
     const {skill} = this.state;
+
     return (
       <section className="skills">
         {skill.map((skills, index) => (

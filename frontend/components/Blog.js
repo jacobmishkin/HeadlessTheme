@@ -2,9 +2,9 @@ import React, {Componen} from 'react';
 import {Config} from '../config.js';
 import Link from 'next/link';
 import {Image, LinkBorder} from '../utilities';
-import Moment from 'react-moment';
+import Meta from './Meta.js';
 
-const Blog = ({title, content, link, image, date}) => (
+const Blog = ({title, content, link, image, date, id}) => (
   <section className="blog">
     <h2>Latest Blog Post</h2>
     <div className="blog_wrapper">
@@ -18,9 +18,7 @@ const Blog = ({title, content, link, image, date}) => (
             />
           </a>
         </Link>
-        <div className="date">
-          <Moment format="MMMM DD YYYY">{date}</Moment>
-        </div>
+        <Meta date={date} id={id} />
         <Link href={`/post?slug=${link}&apiRoute=post`} as={`/blog/${link}`}>
           <a>
             <h3>{title}</h3>

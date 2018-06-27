@@ -9,6 +9,7 @@ import Contact from '../components/Contact.js';
 import Hero from '../components/Hero.js';
 import Card from '../components/Card.js';
 import Blog from '../components/Blog.js';
+import Meta from '../components/Meta.js';
 
 class Index extends Component {
   static async getInitialProps(context) {
@@ -24,6 +25,7 @@ class Index extends Component {
       `${Config.apiUrl}/wp-json/wp/v2/posts?per_page=1`
     );
     const blog = await blogRes.json();
+
     return {about, contact, blog};
   }
 
@@ -51,7 +53,7 @@ class Index extends Component {
             image={items.acf.image}
             link={items.slug}
             date={items.date}
-
+            id={items.id}
           />
         ))}
 
