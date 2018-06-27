@@ -9,7 +9,7 @@ import Contact from '../components/Contact.js';
 import Hero from '../components/Hero.js';
 import Card from '../components/Card.js';
 import Blog from '../components/Blog.js';
-import Meta from '../components/Meta.js';
+
 
 class Index extends Component {
   static async getInitialProps(context) {

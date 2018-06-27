@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Moment from 'react-moment';
 import {Config} from '../config.js';
 
-class Meta extends Component {
+class PostTag extends Component {
   state = {
     postTag: [],
   };
@@ -22,20 +22,17 @@ class Meta extends Component {
     console.log(postTag);
     return (
       <div className="postTags">
+        <div className="date">
+          <Moment format="MMMM DD YYYY">{this.props.date}</Moment>
+        </div>
         {postTag.postTag.map((skills, index) => (
           <span className="skill" key={index}>
             {skills.name}
           </span>
         ))}
-
-        <div>
-          <div className="date">
-            <Moment format="MMMM DD YYYY">{this.props.date}</Moment>
-          </div>
-        </div>
       </div>
     );
   }
 }
 
-export default Meta;
+export default PostTag;
