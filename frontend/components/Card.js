@@ -30,7 +30,7 @@ export default class Projects extends Component {
             >
               <Link
                 href={`/Project?slug=${post.slug}&apiRoute=projects`}
-                as={`/project/${post.slug}`}
+                as={`/Project/${post.slug}`}
               >
                 <a className="card_link">
                   <h3>{post.title.rendered}</h3>

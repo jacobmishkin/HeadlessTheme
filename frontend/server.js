@@ -10,15 +10,15 @@ app
   .then(() => {
     const server = express();
 
-    server.get('/post/:slug', (req, res) => {
+    server.get('/blog/:slug', (req, res) => {
       const actualPage = '/post';
       const queryParams = {slug: req.params.slug, apiRoute: 'post'};
       app.render(req, res, actualPage, queryParams);
     });
-
     server.get('/project/:slug', (req, res) => {
-      app.render(req, res, '/Project', {
-        slug: req.params.slug, apiRoute: 'project'});
+      const actualPage = '/Project';
+      const queryParams = {slug: req.params.slug, apiRoute: 'projects'};
+      app.render(req, res, actualPage, queryParams);
     });
 
     server.get('/page/:slug', (req, res) => {
