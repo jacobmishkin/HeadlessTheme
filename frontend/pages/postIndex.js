@@ -31,6 +31,7 @@ class postIndex extends Component {
             link={items.slug}
             date={items.date}
             id={items.id}
+            isHomePage={false}
           />
         ))}
       </Layout>

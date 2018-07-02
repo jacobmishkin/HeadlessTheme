@@ -4,7 +4,7 @@ import Link from 'next/link';
 import {Image, Button} from '../utilities';
 import PostTag from './PostTag.js';
 
-const Blog = ({header, title, content, link, image, date, id}) => (
+const Blog = ({header, title, content, link, image, date, id, isHomePage}) => (
   <section className="blog">
     {header ? <h2>{header}</h2> : null}
     <div className="blog_wrapper">
@@ -25,7 +25,12 @@ const Blog = ({header, title, content, link, image, date, id}) => (
           </a>
         </Link>
       </div>
-      <Button href={`/postIndex`} as={`/blog/`} text="View More Posts" />
+      {
+        (isHomePage)
+        ? <Button href={`/postIndex`} as={`/blog/`} text="View More Posts" />
+        : null
+      }
+
     </div>
   </section>
 );
