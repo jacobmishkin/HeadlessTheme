@@ -1,35 +1,35 @@
 import React, {Component} from 'react';
 import Moment from 'react-moment';
 import {Config} from '../config.js';
-import {MetaData} from '../utilities';
-class PostTag extends Component {
+import {Tag} from '../utilities';
+
+class MetaData extends Component {
   state = {
-    postTag: [],
+    metaData: [],
   };
 
   async componentWillMount() {
-    const postTagRes = await fetch(
+    const metaRes = await fetch(
       `${Config.apiUrl}/wp-json/wp/v2/tags?post=${this.props.id}`
     );
-    const postTag = await postTagRes.json();
+    const metaData = await metaRes.json();
     this.setState({
-      postTag,
+      metaData,
     });
   }
 
   render() {
-    const postTag = this.state;
-    console.log(postTag);
+    const {metaData} = this.state;
     return (
       <div className="postTags">
         <div className="date">
           <Moment format="MMMM DD YYYY">{this.props.date}</Moment>
         </div>
         <div className="tag_name">
-          <MetaData />
-          {postTag.postTag.map((skills, index) => (
+          <Tag />
+          {metaData.map((meta, index) => (
             <span className="skill post_tag" key={index}>
-              {skills.name}
+              {meta.name}
             </span>
           ))}
         </div>
@@ -38,4 +38,4 @@ class PostTag extends Component {
   }
 }
 
-export default PostTag;
+export default MetaData;

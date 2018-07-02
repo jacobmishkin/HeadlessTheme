@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Config} from '../config.js';
 import Link from 'next/link';
 import {Image, Button} from '../utilities';
-import PostTag from './PostTag.js';
+import MetaData from './MetaData.js';
 
 const Blog = ({header, title, content, link, image, date, id, isHomePage}) => (
   <section className="blog">
@@ -18,7 +18,7 @@ const Blog = ({header, title, content, link, image, date, id, isHomePage}) => (
             />
           </a>
         </Link>
-        <PostTag date={date} id={id} />
+        <MetaData date={date} id={id} />
         <Link href={`/post?slug=${link}&apiRoute=post`} as={`/blog/${link}`}>
           <a>
             <h3>{title}</h3>

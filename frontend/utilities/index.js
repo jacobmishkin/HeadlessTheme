@@ -6,7 +6,7 @@ import Logo from './Logo.js';
 import SocialIcons from './SocialIcons.js';
 import LinkBorder from './LinkBorder.js';
 import smoothScroll from './smoothScroll.js';
-import MetaData from './MetaData.js';
+import Tag from './Tag.js';
 import Button from './Button.js';
 export {
   BurgerIcon,
@@ -17,6 +17,6 @@ export {
   SocialIcons,
   LinkBorder,
   smoothScroll,
-  MetaData,
+  Tag,
   Button,
 };
