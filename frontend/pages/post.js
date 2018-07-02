@@ -5,6 +5,7 @@ import Error from 'next/error';
 import PageWrapper from '../components/PageWrapper.js';
 import {Config} from '../config.js';
 import {Image} from '../utilities';
+import MetaData from '../components/MetaData.js';
 class Post extends Component {
   static async getInitialProps(context) {
     const {slug, apiRoute} = context.query;
@@ -21,14 +22,15 @@ class Post extends Component {
 
     return (
       <Layout {...this.props}>
-        <section className="post">
-          <div className="container">
+        <section className="page_container post">
+          <h1>{post.title.rendered}</h1>
+          <div className="content_wrapper">
             <Image
               image={post.acf.image}
               alt="Custom Post Types using Reast Api and React"
               className="blog_image"
             />
-            <h1>{post.title.rendered}</h1>
+            <MetaData date={post.date} id={post.id} />
             <div className="post_content">
               <p>{post.content.rendered}</p>
             </div>

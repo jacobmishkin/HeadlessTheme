@@ -34,10 +34,13 @@ header,
 .projects,
 .contact,
 .blog,
-.post {
+.post,
+.blog_index,
+.page_container {
     background-color: #EAE7DC;
     text-align: center;
-    h2 {
+    h2,
+    h1 {
         font-size: 3.5rem;
         margin: 1em 0;
         border-bottom: 1px solid black;

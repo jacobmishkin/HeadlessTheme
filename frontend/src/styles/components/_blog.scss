@@ -1,45 +1,63 @@
 .blog_wrapper {
     max-width: 950px;
     margin: 0 auto;
-    .blog_title {
-        h3 {
-            margin-top: .5em;
-            ;
-            font-size: 3rem;
-            text-align: left;
-            @media screen and (min-width: 505px) {
-                text-align: center;
-            }
-        }
-    }
-    p,
-    .postTags {
-        text-align: left;
-    }
     .btn {
         width: 250px;
+        margin-top: 2em;
     }
-    .post_tag {
-        margin-right: .5em;
-    }
-    .post_image {
-        margin-bottom: 0;
-    }
-    .tag_logo {
-        vertical-align: sub;
-        margin-right: .2em;
-        svg {
-            width: 15px;
+}
+
+.blog_title {
+    border-top: 2px solid #cacaca;
+    border-bottom: 2px solid #cacaca;
+    padding-top: 1.5em;
+    h3 {
+        margin-top: .5em;
+        margin-bottom: .2em;
+        font-size: 2.5rem;
+        text-align: center;
+        @media screen and (min-width: 505px) {
+            font-size: 3.5rem;
         }
     }
-    .tag_name {
-        margin-top: .3em;
+}
+
+.meta_tags {
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+.meta_tag {
+    margin-right: .3em;
+    &:after {
+        content: ','
     }
+    &:last-child {
+        &:after {
+            content: '';
+        }
+    }
+}
+
+.post_image {
+    margin-bottom: 0;
+}
+
+.tag_logo {
+    vertical-align: sub;
+    margin-right: .2em;
+    svg {
+        width: 15px;
+    }
+}
+
+.tag_name {
+    margin-top: .3em;
 }
 
 .blog_image {
     margin: 0 auto;
-    width: 70%;
+    width: 100%;
 }
 
 .post_content {
@@ -48,4 +66,13 @@
     margin: 0 auto;
     font-size: 1.3rem;
     line-height: 1.645;
+}
+
+.blog_index {
+    min-height: 100vh;
+    .blog_title {
+        h3 {
+            font-size: 2.5em;
+        }
+    }
 }

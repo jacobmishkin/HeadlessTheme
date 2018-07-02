@@ -25,12 +25,9 @@ const Blog = ({header, title, content, link, image, date, id, isHomePage}) => (
           </a>
         </Link>
       </div>
-      {
-        (isHomePage)
-        ? <Button href={`/postIndex`} as={`/blog/`} text="View More Posts" />
-        : null
-      }
-
+      {isHomePage ? (
+        <Button href={`/postIndex`} as={`/blog/`} text="View More Posts" />
+      ) : null}
     </div>
   </section>
 );

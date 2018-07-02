@@ -21,14 +21,14 @@ class MetaData extends Component {
   render() {
     const {metaData} = this.state;
     return (
-      <div className="postTags">
+      <div className="meta_tags">
         <div className="date">
           <Moment format="MMMM DD YYYY">{this.props.date}</Moment>
         </div>
         <div className="tag_name">
           <Tag />
           {metaData.map((meta, index) => (
-            <span className="skill post_tag" key={index}>
+            <span className="skill meta_tag" key={index}>
               {meta.name}
             </span>
           ))}

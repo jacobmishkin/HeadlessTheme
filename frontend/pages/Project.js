@@ -21,8 +21,8 @@ class Project extends Component {
     return (
       <Layout {...this.props}>
         <section className="page_container">
+          <h1>{project.title.rendered}</h1>
           <div className="content_wrapper">
-            <h2>{project.title.rendered}</h2>
             <div className="content">
               <p>{project.content.rendered}</p>
               <a className="btn" href="#">
@@ -32,7 +32,12 @@ class Project extends Component {
             </div>
           </div>
           {project.acf.project_images.map(image => (
-            <Image key={image.id} image={image.url} alt={image.alt} className="project_image" />
+            <Image
+              key={image.id}
+              image={image.url}
+              alt={image.alt}
+              className="project_image"
+            />
           ))}
         </section>
       </Layout>
