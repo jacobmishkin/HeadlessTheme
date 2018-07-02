@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Image, SocialIcons, LinkBorder} from '../utilities';
+import {Image, SocialIcons, Button} from '../utilities';
 
 const Contact = ({image, tagline, jobTitle}) => (
   <section id="connect" className="contact">
@@ -8,10 +8,7 @@ const Contact = ({image, tagline, jobTitle}) => (
       <Image className="contact_image" image={image} alt="Chicago" />
       <h3>{tagline}</h3>
       <h4>{jobTitle}</h4>
-      <a className="btn" href="mailto:jacob@jacobmishkin.com">
-        contact me
-        <LinkBorder btnType={'btn_border'} />
-      </a>
+      <Button href={`mailto:jacob@jacobmishkin.com`} text="Contact Me" />
       <SocialIcons />
     </div>
   </section>

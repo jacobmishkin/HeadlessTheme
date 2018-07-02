@@ -48,6 +48,7 @@ class Index extends Component {
         {blog.map(items => (
           <Blog
             key={items.id}
+            header="Latest Blog Post"
             title={items.title.rendered}
             content={items.excerpt.rendered}
             image={items.acf.image}

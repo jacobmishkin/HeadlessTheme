@@ -1,18 +1,18 @@
-import React, {Componen} from 'react';
+import React, {Component} from 'react';
 import {Config} from '../config.js';
 import Link from 'next/link';
-import {Image, LinkBorder} from '../utilities';
+import {Image, Button} from '../utilities';
 import PostTag from './PostTag.js';
 
-const Blog = ({title, content, link, image, date, id}) => (
+const Blog = ({header, title, content, link, image, date, id}) => (
   <section className="blog">
-    <h2>Latest Blog Post</h2>
+    {header ? <h2>{header}</h2> : null}
     <div className="blog_wrapper">
       <div className="blog_title">
         <Link href={`/post?slug=${link}&apiRoute=post`} as={`/blog/${link}`}>
           <a>
             <Image
-              className="bio_image"
+              className="bio_image post_image"
               image={image}
               alt="WordPress and React"
             />
@@ -25,12 +25,7 @@ const Blog = ({title, content, link, image, date, id}) => (
           </a>
         </Link>
       </div>
-      <Link href={`/post?slug=${link}&apiRoute=post`} as={`/blog/${link}`}>
-        <a className="btn" href="#">
-          View More Posts
-          <LinkBorder btnType={'btn_border'} />
-        </a>
-      </Link>
+      <Button href={`/postIndex`} as={`/blog/`} text="View More Posts" />
     </div>
   </section>
 );

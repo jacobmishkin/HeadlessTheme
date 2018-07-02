@@ -3,18 +3,49 @@
     margin: 0 auto;
     .blog_title {
         h3 {
-            margin-top: 0;
-            font-size: 2rem;
+            margin-top: .5em;
+            ;
+            font-size: 3rem;
             text-align: left;
             @media screen and (min-width: 505px) {
                 text-align: center;
             }
         }
     }
-    p {
+    p,
+    .postTags {
         text-align: left;
     }
     .btn {
         width: 250px;
     }
+    .post_tag {
+        margin-right: .5em;
+    }
+    .post_image {
+        margin-bottom: 0;
+    }
+    .tag_logo {
+        vertical-align: sub;
+        margin-right: .2em;
+        svg {
+            width: 15px;
+        }
+    }
+    .tag_name {
+        margin-top: .3em;
+    }
+}
+
+.blog_image {
+    margin: 0 auto;
+    width: 70%;
+}
+
+.post_content {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    line-height: 1.645;
 }
