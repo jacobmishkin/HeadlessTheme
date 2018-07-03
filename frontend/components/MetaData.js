@@ -13,6 +13,7 @@ class MetaData extends Component {
       `${Config.apiUrl}/wp-json/wp/v2/tags?post=${this.props.id}`
     );
     const metaData = await metaRes.json();
+
     this.setState({
       metaData,
     });
