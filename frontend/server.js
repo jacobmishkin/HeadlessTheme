@@ -15,6 +15,7 @@ app
       const queryParams = {slug: req.params.slug, apiRoute: 'post'};
       app.render(req, res, actualPage, queryParams);
     });
+
     server.get('/project/:slug', (req, res) => {
       const actualPage = '/Project';
       const queryParams = {slug: req.params.slug, apiRoute: 'projects'};

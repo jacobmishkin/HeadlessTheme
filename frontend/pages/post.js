@@ -1,11 +1,12 @@
 import Layout from '../components/Layout.js';
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import fetch from 'isomorphic-unfetch';
 import Error from 'next/error';
 import PageWrapper from '../components/PageWrapper.js';
 import {Config} from '../config.js';
 import {Image} from '../utilities';
 import MetaData from '../components/MetaData.js';
+
 class Post extends Component {
   static async getInitialProps(context) {
     const {slug, apiRoute} = context.query;
@@ -18,6 +19,7 @@ class Post extends Component {
 
   render() {
     const {post} = this.props;
+
     if (!post.title) return <Error statusCode={404} />;
 
     return (
@@ -31,8 +33,21 @@ class Post extends Component {
               className="blog_image"
             />
             <MetaData date={post.date} id={post.id} />
+
             <div className="post_content">
-              <p>{post.content.rendered}</p>
+              {post.acf.blog_data.map(data => (
+                <Fragment>
+                  {data.text ? <p>{data.text}</p> : null}
+
+                  {data.image ? (
+                    <Image
+                      image={data.image}
+                      alt="Custom Post Types using Reast Api and React"
+                      className="blog_image"
+                    />
+                  ) : null}
+                </Fragment>
+              ))}
             </div>
           </div>
         </section>

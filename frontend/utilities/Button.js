@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import LinkBorder from './LinkBorder.js';
 import Link from 'next/link';
 
-const Button = ({href, as, text}) => (
-  <Link href={href} as={as}>
+const Button = ({href, text}) => (
+  <Link href={href}>
     <a className="btn" href={href}>
       {text}
       <LinkBorder btnType={'btn_border'} />

@@ -4,8 +4,8 @@ import Link from 'next/link';
 import {Image, Button} from '../utilities';
 import MetaData from './MetaData.js';
 
-const Blog = ({header, title, content, link, image, date, id, isHomePage}) => (
-  <section className="blog">
+const BlogPost = ({header, title, content, link, image, date, id, isHomePage}) => (
+  <section className="blog" id="blog">
     {header ? <h2>{header}</h2> : null}
     <div className="blog_wrapper">
       <div className="blog_title">
@@ -26,9 +26,12 @@ const Blog = ({header, title, content, link, image, date, id, isHomePage}) => (
         </Link>
       </div>
       {isHomePage ? (
-        <Button href={`/postIndex`} as={`/blog/`} text="View More Posts" />
+        <Button
+          href={"/blog"}
+          text="View More Posts"
+        />
       ) : null}
     </div>
   </section>
 );
-export default Blog;
+export default BlogPost;

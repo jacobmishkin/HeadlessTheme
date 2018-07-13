@@ -13,7 +13,5 @@ const Contact = ({image, tagline, jobTitle}) => (
     </div>
   </section>
 );
-Contact.defaultProps = {
-  btnType: '',
-};
+
 export default Contact;

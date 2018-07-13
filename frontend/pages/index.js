@@ -8,8 +8,7 @@ import About from '../components/About.js';
 import Contact from '../components/Contact.js';
 import Hero from '../components/Hero.js';
 import Card from '../components/Card.js';
-import Blog from '../components/Blog.js';
-
+import BlogPost from '../components/BlogPost.js';
 
 class Index extends Component {
   static async getInitialProps(context) {
@@ -46,7 +45,7 @@ class Index extends Component {
           image={about.acf.image}
         />
         {blog.map(items => (
-          <Blog
+          <BlogPost
             key={items.id}
             header="Latest Blog Post"
             title={items.title.rendered}
