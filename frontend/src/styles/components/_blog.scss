@@ -72,21 +72,30 @@
     margin-top: .3em;
 }
 
-.blog_image {
+.blog__example__image {
+    margin: 1em 0;
+    text-align: center;
+}
+
+.blog__image {
     margin: 0 auto;
     width: 100%;
+    padding: 1em 0;
     @media screen and (min-width: 950px) {
-        width: 65%;
+        width: 75%;
     }
 }
 
-.post_content {
+.post__content {
     text-align: left;
-    max-width: 800px;
+    max-width: 950px;
     margin: 0 auto;
     font-size: 1.3rem;
     line-height: 1.645;
     width: 100%;
+    p {
+        margin: 1em 0;
+    }
 }
 
 .blog_index {

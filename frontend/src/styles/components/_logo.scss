@@ -12,7 +12,7 @@
 
 .circle {
     fill: none;
-    stroke: $headerColor;
+    stroke: $themeColor-Light;
     transition: stroke .5s;
 }
 
@@ -22,10 +22,7 @@
 */
 
 .logo:hover {
-    .logo_text {
-        fill: $headerColor;
-    }
     .circle {
-        stroke: $themeColor-Light;
+        stroke: $headerColor;
     }
 }

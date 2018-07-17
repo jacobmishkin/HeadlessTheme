@@ -30,20 +30,19 @@ class Post extends Component {
             <Image
               image={post.acf.image}
               alt="Custom Post Types using Reast Api and React"
-              className="blog_image"
+              className="blog__image"
             />
             <MetaData date={post.date} id={post.id} />
 
-            <div className="post_content">
+            <div className="post__content">
               {post.acf.blog_data.map(data => (
                 <Fragment>
                   {data.text ? <p>{data.text}</p> : null}
-
                   {data.image ? (
                     <Image
                       image={data.image}
                       alt="Custom Post Types using Reast Api and React"
-                      className="blog_image"
+                      className="blog__example__image"
                     />
                   ) : null}
                 </Fragment>
