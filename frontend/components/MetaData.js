@@ -8,7 +8,7 @@ class MetaData extends Component {
     metaData: [],
   };
 
-  async componentWillMount() {
+  async componentDidMount() {
     const metaRes = await fetch(
       `${Config.apiUrl}/wp-json/wp/v2/tags?post=${this.props.id}`
     );

@@ -7,7 +7,7 @@ export default class Skills extends Component {
     skill: [],
   };
 
-  async componentWillMount() {
+  async componentDidMount() {
     const skillRes = await fetch(
       `${Config.apiUrl}/wp-json/wp/v2/tags/?per_page=15&order=desc`
     );

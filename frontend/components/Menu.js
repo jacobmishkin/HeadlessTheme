@@ -29,15 +29,17 @@ class Menu extends Component {
       const actualPage = item.object === 'category' ? 'category' : 'post';
       return (
         <li key={item.ID}>
-          <Link
-            as={`/${item.object}/${slug}`}
-            href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
-          >
-            <a>
-              {item.title}
-              <LinkBorder btnType="navBtn" />
-            </a>
-          </Link>
+          <LinkSmoothScroll href={item.url}>
+            <Link
+              as={`/${item.object}/${slug}`}
+              href={`/${actualPage}?slug=${slug}&apiRoute=${item.object}`}
+            >
+              <a>
+                {item.title}
+                <LinkBorder btnType="navBtn" />
+              </a>
+            </Link>
+          </LinkSmoothScroll>
         </li>
       );
     });
