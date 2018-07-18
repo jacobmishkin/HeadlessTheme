@@ -1,7 +1,7 @@
-import Layout from '../components/Layout.js';
 import React, {Component, Fragment} from 'react';
 import fetch from 'isomorphic-unfetch';
 import Error from 'next/error';
+import Layout from '../components/Layout.js';
 import PageWrapper from '../components/PageWrapper.js';
 import {Config} from '../config.js';
 import {Image} from '../utilities';
@@ -34,9 +34,9 @@ class Post extends Component {
             />
             <MetaData date={post.date} id={post.id} />
 
-            <div className="post__content">
+            <div className="post__content" key={post.slug}>
               {post.acf.blog_data.map(data => (
-                <Fragment>
+                <Fragment key={data.key}>
                   {data.text ? <p>{data.text}</p> : null}
                   {data.image ? (
                     <Image

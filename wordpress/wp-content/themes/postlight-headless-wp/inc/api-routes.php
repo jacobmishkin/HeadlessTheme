@@ -22,6 +22,14 @@ add_action( 'rest_api_init', function () {
 		)
 	) );
 
+		register_rest_route( 'postlight/v1', '/blog', array(
+		'methods'  => 'GET',
+		'callback' => 'rest_get_blog',
+		'args' => array(
+			'slug' => array_merge( $post_slug_arg, array( 'required' => true ) ),
+		)
+	) );
+
 	register_rest_route( 'postlight/v1', '/page', array(
 		'methods'  => 'GET',
 		'callback' => 'rest_get_page',

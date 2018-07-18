@@ -36,8 +36,7 @@
                     },
                     "choices": {
                         "text": "Text",
-                        "image": "Image",
-                        "codepen": "CodePen"
+                        "image": "Image"
                     },
                     "allow_null": 0,
                     "other_choice": 0,
@@ -107,30 +106,22 @@
                 },
                 {
                     "key": "field_5b4641aef0dd9",
-                    "label": "Code",
-                    "name": "code",
-                    "type": "wysiwyg",
+                    "label": "Key",
+                    "name": "key",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5b463b877dbfe",
-                                "operator": "==",
-                                "value": "codepen"
-                            }
-                        ]
-                    ],
+                    "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
-                    "tabs": "text",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -152,5 +143,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531411425
+    "modified": 1531933492
 }
