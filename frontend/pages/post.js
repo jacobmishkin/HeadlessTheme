@@ -35,8 +35,8 @@ class Post extends Component {
             <MetaData date={post.date} id={post.id} />
 
             <div className="post__content" key={post.slug}>
-              {post.acf.blog_data.map(data => (
-                <Fragment key={data.key}>
+              {post.acf.blog_data.map((data, index) => (
+                <Fragment key={index}>
                   {data.text ? <p>{data.text}</p> : null}
                   {data.image ? (
                     <Image
