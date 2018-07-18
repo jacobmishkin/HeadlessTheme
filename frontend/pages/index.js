@@ -25,11 +25,14 @@ class Index extends Component {
     );
     const blog = await blogRes.json();
 
-    return {about, contact, blog};
+    const projectRes = await fetch(`${Config.apiUrl}/wp-json/wp/v2/projects`);
+    const project = await projectRes.json();
+
+    return {about, contact, blog, project};
   }
 
   render() {
-    const {about, contact, blog} = this.props;
+    const {about, contact, blog, project} = this.props;
 
     return (
       <Layout {...this.props}>
@@ -38,15 +41,15 @@ class Index extends Component {
           jobTitle="Frontend Developer"
           location="Based in Chicago"
         />
-        <Card />
+        <Card project={project} />
         <About
           title={about.title.rendered}
           content={about.content.rendered}
           image={about.acf.image}
         />
-        {blog.map(items => (
+        {blog.map((items, index) => (
           <BlogPost
-            key={items.id}
+            key={index}
             header="Latest Blog Post"
             title={items.title.rendered}
             content={items.excerpt.rendered}

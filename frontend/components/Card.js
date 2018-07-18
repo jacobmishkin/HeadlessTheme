@@ -3,30 +3,15 @@ import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 import {Config} from '../config';
 
-export default class Projects extends Component {
-  state = {
-    project: [],
-  };
+const Projects = ({project}) => (
 
-  async componentDidMount() {
-    const projectRes = await fetch(`${Config.apiUrl}/wp-json/wp/v2/projects`);
-    const project = await projectRes.json();
-    this.setState({
-      project,
-    });
-  }
-
-
-  render() {
-    const {project} = this.state;
-    return (
       <section id="project" className="projects">
         <h2>Projects</h2>
         <div className="container project__grid">
-          {project.map(post => (
+          {project.map((post, index) => (
             <div
               className={`project ${post.slug}`}
-              key={post.id}
+              key={index}
               style={{backgroundImage: 'url(' + post.acf.image + ')'}}
             >
               <Link
@@ -42,5 +27,4 @@ export default class Projects extends Component {
         </div>
       </section>
     );
-  }
-}
+export default Projects;
