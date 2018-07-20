@@ -21,9 +21,9 @@ class Blog extends Component {
       <Layout {...this.props}>
         <section className="blog_index">
           <h1>Blog</h1>
-          {blogPosts.map(items => (
+          {blogPosts.map((items, index ) => (
             <BlogPost
-              key={items.id}
+              key={index}
               title={items.title.rendered}
               content={items.excerpt.rendered}
               image={items.acf.image}

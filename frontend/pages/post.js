@@ -37,7 +37,11 @@ class Post extends Component {
             <div className="post__content" key={post.slug}>
               {post.acf.blog_data.map((data, index) => (
                 <Fragment key={index}>
+
+                  {data.header ? <h3>{data.header}</h3> : null}
+
                   {data.text ? <p>{data.text}</p> : null}
+
                   {data.image ? (
                     <Image
                       image={data.image}

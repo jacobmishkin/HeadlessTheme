@@ -96,6 +96,16 @@
     p {
         margin: 1em 0;
     }
+    h3 {
+        text-align: center;
+        font-size: 1.4em;
+        @media screen and (min-width: 520px) {
+            font-size: 2em;
+        }
+        @media screen and (min-width: 1200px) {
+            font-size: 2.5em;
+        }
+    }
 }
 
 .blog_index {

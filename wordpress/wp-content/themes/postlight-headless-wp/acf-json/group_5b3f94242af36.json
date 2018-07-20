@@ -36,7 +36,8 @@
                     },
                     "choices": {
                         "text": "Text",
-                        "image": "Image"
+                        "image": "Image",
+                        "header": "Header"
                     },
                     "allow_null": 0,
                     "other_choice": 0,
@@ -103,6 +104,33 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": ""
+                },
+                {
+                    "key": "field_5b509d2c9cdc5",
+                    "label": "Header",
+                    "name": "header",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5b463b877dbfe",
+                                "operator": "==",
+                                "value": "header"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -124,5 +152,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531935212
+    "modified": 1532009814
 }
